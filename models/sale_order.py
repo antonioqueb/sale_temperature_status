@@ -17,8 +17,9 @@ class SaleOrder(models.Model):
                 order.temperature_status = False
                 continue
             
+            # Convertir ambos a date
             create_date = order.create_date.date()
-            delivery_date = order.commitment_date
+            delivery_date = order.commitment_date.date()  # Conversión añadida
             delta = (delivery_date - create_date).days
             
             order.temperature_status = 'green' if delta >= 15 else 'red'
