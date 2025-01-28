@@ -8,6 +8,8 @@
     'depends': ['sale_management'],
     'data': [
         'views/sale_views.xml',
+        'views/sale_temperature_assets.xml',
+
     ],
     'assets': {
     'web.assets_frontend': [
