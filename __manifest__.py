@@ -12,7 +12,7 @@
     ],
     'assets': {
         'web.assets_backend': [
-            'sale_temperature_status/static/src/css/custom_styles.css',  # Aquí lo cambias por el nombre correcto
+            'sale_temperature_status/static/src/css/sale_temperature_backend',  # Aquí lo cambias por el nombre correcto
         ],
     },
     'installable': True,
