@@ -5,8 +5,8 @@ class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
     temperature_status = fields.Selection(
-        [('Alta', 'Alta'), ('Baja', 'Baja')],
-        string='Temperatura',
+        [('Incidencia', 'Incidencia'), ('Normal', 'Normal')],
+        string='Estatus',
         compute='_compute_temperature_status',
         store=True,  # Almacenar el valor en la base de datos
         readonly=True  # El campo sigue siendo de solo lectura
@@ -25,6 +25,6 @@ class SaleOrder(models.Model):
             
             # Asignar valores según el delta de días
             if delta < 15:
-                order.temperature_status = 'Alta'
+                order.temperature_status = 'Incidencia'
             else:
-                order.temperature_status = 'Baja'
+                order.temperature_status = 'Normal'
