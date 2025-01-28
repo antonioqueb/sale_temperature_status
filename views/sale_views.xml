@@ -12,7 +12,7 @@
                        decoration-primary="temperature_status == 'Normal'" 
                        readonly="1"/>
                 <!-- Nuevo campo entrega_en -->
-                <field name="entrega_en" string="Días para Entrega" readonly="1"/>
+                <field name="entrega_en" string="Entrega en" readonly="1"/>
             </xpath>
         </field>
     </record>
@@ -30,7 +30,7 @@
                        decoration-primary="temperature_status == 'Normal'" 
                        readonly="1"/>
                 <!-- Nuevo campo entrega_en -->
-                <field name="entrega_en" string="Días para Entrega" readonly="1"/>
+                <field name="entrega_en" string="Entrega en" readonly="1"/>
             </xpath>
         </field>
     </record>
