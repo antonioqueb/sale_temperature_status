@@ -1,5 +1,4 @@
 from odoo import models, fields, api
-from datetime import datetime
 
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
@@ -17,9 +16,8 @@ class SaleOrder(models.Model):
                 order.temperature_status = False
                 continue
             
-            # Convertir ambos a date
             create_date = order.create_date.date()
-            delivery_date = order.commitment_date.date()  # Conversión añadida
+            delivery_date = order.commitment_date.date()
             delta = (delivery_date - create_date).days
             
-            order.temperature_status = 'green' if delta >= 15 else 'red'
+            order.temperature_status = 'Alta' if delta >= 15 else 'Baja' 
