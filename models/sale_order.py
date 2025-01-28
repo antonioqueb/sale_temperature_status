@@ -20,4 +20,5 @@ class SaleOrder(models.Model):
             delivery_date = order.commitment_date.date()
             delta = (delivery_date - create_date).days
             
-            order.temperature_status = 'Alta' if delta >= 15 else 'Baja' 
+            # Lógica invertida según requerimiento
+            order.temperature_status = 'Alta' if delta < 15 else 'Baja'  # Menos de 15 días = Alta (Rojo)
