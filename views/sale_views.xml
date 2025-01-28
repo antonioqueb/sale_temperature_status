@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <record id="view_quotation_tree_inherit" model="ir.ui.view">
         <field name="name">sale.order.tree.inherit.quotation</field>
@@ -7,8 +6,7 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='partner_id']" position="after">
                 <field name="temperature_status" widget="badge"
-                       options="{'class_field': 'temperature_class'}"
-                       sortable="True"/>
+                       options="{'class_field': 'temperature_class'}"/>
             </xpath>
         </field>
     </record>
@@ -20,8 +18,7 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='partner_id']" position="after">
                 <field name="temperature_status" widget="badge"
-                       options="{'class_field': 'temperature_class'}"
-                       sortable="True"/>
+                       options="{'class_field': 'temperature_class'}"/>
             </xpath>
         </field>
     </record>
