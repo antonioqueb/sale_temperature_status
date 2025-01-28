@@ -11,7 +11,7 @@
         'views/sale_temperature_assets.xml',
     ],
     'assets': {
-        'web.assets_backend': [
+        'web.assets_frontend': [
             'sale_temperature_status/static/src/css/sale_temperature_backend.css',
         ],
     },
