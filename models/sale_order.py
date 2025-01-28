@@ -1,12 +1,15 @@
 from odoo import models, fields, api
+from datetime import timedelta
 
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
-    temperature_status = fields.Char(
+    temperature_status = fields.Selection(
+        [('Alta', 'Alta'), ('Baja', 'Baja')],
         string='Temperatura',
         compute='_compute_temperature_status',
-        store=False
+        store=True,  # Almacenar el valor en la base de datos
+        readonly=True  # El campo sigue siendo de solo lectura
     )
 
     @api.depends('create_date', 'commitment_date')
