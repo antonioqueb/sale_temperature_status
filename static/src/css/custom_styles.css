@@ -1,8 +1,8 @@
-.badge-danger {
+.temperature-badge-danger {
     background-color: #FF6666 !important;
     color: white !important;
 }
-.badge-success {
+.temperature-badge-success {
     background-color: #66FF66 !important;
     color: black !important;
 }

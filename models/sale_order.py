@@ -29,7 +29,7 @@ class SaleOrder(models.Model):
             # Lógica de asignación
             if delta < 15:
                 order.temperature_status = 'Alta'
-                order.temperature_class = 'badge-danger'
+                order.temperature_class = 'temperature-badge-danger'
             else:
                 order.temperature_status = 'Baja'
-                order.temperature_class = 'badge-success'
+                order.temperature_class = 'temperature-badge-success'
