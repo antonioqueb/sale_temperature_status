@@ -8,7 +8,7 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='partner_id']" position="after">
                 <field name="temperature_status" widget="badge" 
-                    options="{'decoration-success': 'temperature_status == "green"', 'decoration-danger': 'temperature_status == "red"'}"/>
+                    options="{&quot;decoration-success&quot;: &quot;temperature_status == 'green'&quot;, &quot;decoration-danger&quot;: &quot;temperature_status == 'red'&quot;}"/>
             </xpath>
         </field>
     </record>
@@ -21,7 +21,7 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='partner_id']" position="after">
                 <field name="temperature_status" widget="badge" 
-                    options="{'decoration-success': 'temperature_status == "green"', 'decoration-danger': 'temperature_status == "red"'}"/>
+                    options="{&quot;decoration-success&quot;: &quot;temperature_status == 'green'&quot;, &quot;decoration-danger&quot;: &quot;temperature_status == 'red'&quot;}"/>
             </xpath>
         </field>
     </record>
