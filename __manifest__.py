@@ -8,15 +8,13 @@
     'depends': ['sale_management'],
     'data': [
         'views/sale_views.xml',
-        'views/sale_temperature_assets.xml',
-
+        'views/sale_temperature_assets.xml',  # Agregar el archivo de assets aquí
     ],
     'assets': {
-    'web.assets_frontend': [
-        'sale_temperature_status/static/src/css/*.css',
-    ],
-},
-
+        'web.assets_backend': [
+            'sale_temperature_status/static/src/css/custom_styles.css',  # Aquí lo cambias por el nombre correcto
+        ],
+    },
     'installable': True,
     'application': False,
     'license': 'LGPL-3',
