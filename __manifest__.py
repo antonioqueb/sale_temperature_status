@@ -10,8 +10,8 @@
         'views/sale_views.xml',
     ],
     'assets': {
-    'web.assets_backend': [
-        'sale_temperature_status/static/src/css/custom_styles.css',
+    'web.assets_frontend': [
+        'sale_temperature_status/static/src/css/*.css',
     ],
 },
 
