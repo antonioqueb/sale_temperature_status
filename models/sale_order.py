@@ -1,5 +1,5 @@
 from odoo import models, fields, api
-from datetime import timedelta
+from datetime import date
 
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
@@ -9,8 +9,29 @@ class SaleOrder(models.Model):
         string='Estatus',
         compute='_compute_temperature_status',
         store=True,  # Almacenar el valor en la base de datos
-        readonly=True  # El campo sigue siendo de solo lectura
+        readonly=True
     )
+    
+    entrega_en = fields.Integer(
+        string='Entrega en',
+        compute='_compute_entrega_en',
+        store=True,  # Almacenar el valor en la base de datos
+        readonly=True
+    )
+
+    @api.depends('commitment_date')
+    def _compute_entrega_en(self):
+        for order in self:
+            if not order.commitment_date:
+                order.entrega_en = 0
+                continue
+
+            today = date.today()
+            delivery_date = order.commitment_date.date()
+            days_remaining = (delivery_date - today).days
+
+            # No mostrar valores negativos
+            order.entrega_en = max(days_remaining, 0)
 
     @api.depends('create_date', 'commitment_date')
     def _compute_temperature_status(self):
