@@ -26,7 +26,7 @@ class SaleOrder(models.Model):
             delivery_date = order.commitment_date.date()
             delta = (delivery_date - create_date).days
             
-            # Lógica de asignación
+            # Asegura que los nombres de clase coincidan con el CSS
             if delta < 15:
                 order.temperature_status = 'Alta'
                 order.temperature_class = 'temperature-badge-danger'
