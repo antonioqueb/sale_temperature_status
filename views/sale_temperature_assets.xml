@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<odoo>
-    <template id="assets_backend_sale_temperature" inherit_id="web.assets_backend" name="Sale Temperature Backend Assets">
-        <xpath expr="." position="inside">
-            <link rel="stylesheet" type="text/css" href="/sale_temperature_status/static/src/css/sale_temperature_backend.css"/>
-        </xpath>
-    </template>
-</odoo>
