@@ -9,6 +9,12 @@
     'data': [
         'views/sale_views.xml',
     ],
+    'assets': {
+    'web.assets_backend': [
+        'sale_temperature_status/static/src/css/custom_styles.css',
+    ],
+},
+
     'installable': True,
     'application': False,
     'license': 'LGPL-3',
