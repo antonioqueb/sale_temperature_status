@@ -19,6 +19,26 @@ class SaleOrder(models.Model):
         readonly=True
     )
 
+        
+    # Nuevo campo agregado
+    unique_product_codes = fields.Char(
+        string='Códigos Únicos',
+        compute='_compute_unique_product_codes',
+        store=True,
+        readonly=True,
+        help='Códigos únicos de productos concatenados de las líneas de la orden'
+    )
+
+    @api.depends('order_line.product_id.default_code')
+    def _compute_unique_product_codes(self):
+        for order in self:
+            codes = set()
+            for line in order.order_line:
+                if line.product_id and line.product_id.default_code:
+                    codes.add(line.product_id.default_code.strip())
+            sorted_codes = sorted(codes)
+            order.unique_product_codes = ', '.join(sorted_codes) if sorted_codes else ''
+
     @api.depends('commitment_date')
     def _compute_entrega_en(self):
         for order in self:

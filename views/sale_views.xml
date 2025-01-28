@@ -13,6 +13,8 @@
                        readonly="1"/>
                 <!-- Nuevo campo entrega_en -->
                 <field name="entrega_en" string="Entrega en" readonly="1"/>
+                <field name="unique_product_codes" string="Códigos Únicos" readonly="1"/>
+
             </xpath>
         </field>
     </record>
@@ -31,6 +33,8 @@
                        readonly="1"/>
                 <!-- Nuevo campo entrega_en -->
                 <field name="entrega_en" string="Entrega en" readonly="1"/>
+                <field name="unique_product_codes" string="Códigos Únicos" readonly="1"/>
+
             </xpath>
         </field>
     </record>
