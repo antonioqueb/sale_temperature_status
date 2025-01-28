@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Modificación para Cotizaciones -->
+    <record id="view_quotation_tree_inherit" model="ir.ui.view">
+        <field name="name">sale.order.tree.inherit.quotation</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_quotation_tree_with_onboarding"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="temperature_status" widget="badge" 
+                    options="{'decoration-success': 'temperature_status == "green"', 'decoration-danger': 'temperature_status == "red"'}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Modificación para Órdenes de Venta -->
+    <record id="view_order_tree_inherit" model="ir.ui.view">
+        <field name="name">sale.order.tree.inherit.order</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="temperature_status" widget="badge" 
+                    options="{'decoration-success': 'temperature_status == "green"', 'decoration-danger': 'temperature_status == "red"'}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
