@@ -1,40 +1,32 @@
 <odoo>
-    <!-- Herencia de la vista de cotizaciones -->
     <record id="view_quotation_tree_inherit" model="ir.ui.view">
         <field name="name">sale.order.tree.inherit.quotation.entrega_en</field>
         <field name="model">sale.order</field>
-        <field name="inherit_id" ref="sale.view_quotation_tree_with_onboarding"/>
+        <field name="inherit_id" ref="sale.view_quotation_tree"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='partner_id']" position="after">
-                <!-- Campo temperature_status -->
                 <field name="temperature_status" widget="badge"
                        decoration-danger="temperature_status == 'Incidencia'"
                        decoration-primary="temperature_status == 'Normal'" 
                        readonly="1"/>
-                <!-- Nuevo campo entrega_en -->
                 <field name="entrega_en" string="Entrega en" readonly="1"/>
                 <field name="unique_product_codes" string="Productos" readonly="1"/>
-
             </xpath>
         </field>
     </record>
 
-    <!-- Herencia de la vista de órdenes confirmadas -->
     <record id="view_order_tree_inherit" model="ir.ui.view">
         <field name="name">sale.order.tree.inherit.order.entrega_en</field>
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_tree"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='partner_id']" position="after">
-                <!-- Campo temperature_status -->
                 <field name="temperature_status" widget="badge"
                        decoration-danger="temperature_status == 'Incidencia'"
                        decoration-primary="temperature_status == 'Normal'" 
                        readonly="1"/>
-                <!-- Nuevo campo entrega_en -->
                 <field name="entrega_en" string="Entrega en" readonly="1"/>
                 <field name="unique_product_codes" string="Productos" readonly="1"/>
-
             </xpath>
         </field>
     </record>
